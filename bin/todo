@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-# A customized extension to Zach Holman's todo script by Ian Zapolsky (8/11/13)
+# A customized extension to Zach Holman's todo script 
+# by Ian Zapolsky (8/11/13)
 #
 # Adds the ability to prioritize, delete, and display all the todo files you've
 # touched.
