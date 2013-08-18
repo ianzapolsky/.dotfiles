@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# A script that automates the process of commiting all changes and pushing to the master
+# branch of a git repository. 
+# by Ian Zapolsky (8/17/13)
+#
+# Useful when working with blogs where we most often push posts to master.
+#
+# Usage:
+#
+# gup 'commit message'
+
+set -e
+
+git add ./*
+git commit -m "$*"
+git push origin master
