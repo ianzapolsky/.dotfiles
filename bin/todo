@@ -53,10 +53,9 @@ function print_list {
 
 function remove {
   find ~/Desktop/todo/top -name "$1" -exec rm {} \;
-  echo "$1"
   find ~/Desktop/todo/mid -name "$1" -exec rm {} \;
   find ~/Desktop/todo/low -name "$1" -exec rm {} \;
-  echo "end"
+  echo "niiice, you killed that shit"
 }
 
 # script start
@@ -82,8 +81,6 @@ while getopts ":t:m:l:r:p" opt; do
 	  ;;
 	r)
 	  remove "${*:2}"
-	  #rm ~/Desktop/todo/"${*:2}" >&2
-	  #echo "nice, you fuckin killed that shit"
 	  flag=1
 	  ;;
 	:)
