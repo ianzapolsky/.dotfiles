@@ -18,9 +18,8 @@
 #								 todo
 # todo -p 					 --> prints a list of your todos, organized by category
 #
-# todo -r priority-level/thing-i-have-to-do --> removes a todo. note that this
-# 								                command must be run with the priority 
-#  												directory
+# todo -r thing-i-have-to-do --> deletes a todo from whichever priority category
+#								 it's in 
 
 set -e
 
@@ -52,6 +51,14 @@ function print_list {
   echo "\n"
 }
 
+function remove {
+  find ~/Desktop/todo/top -name "$1" -exec rm {} \;
+  echo "$1"
+  find ~/Desktop/todo/mid -name "$1" -exec rm {} \;
+  find ~/Desktop/todo/low -name "$1" -exec rm {} \;
+  echo "end"
+}
+
 # script start
 
 flag=0
@@ -74,8 +81,9 @@ while getopts ":t:m:l:r:p" opt; do
 	  flag=1
 	  ;;
 	r)
-	  rm ~/Desktop/todo/"${*:2}" >&2
-	  echo "nice, you fuckin killed that shit"
+	  remove "${*:2}"
+	  #rm ~/Desktop/todo/"${*:2}" >&2
+	  #echo "nice, you fuckin killed that shit"
 	  flag=1
 	  ;;
 	:)
