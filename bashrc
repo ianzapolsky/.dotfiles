@@ -24,6 +24,17 @@ export PATH=$PATH:$HOME/.rvm/bin
 # Add scripts in .dotfiles
 export PATH=$PATH:~/.dotfiles/bin
 
-# Set my name
-export PS1='\e[0;32mzian\e[m$ '
+# set prompt
+source ~/.prompt
+
+alias awssh='ssh -i ~/.ssh/awskey.pem ec2-user@ec2-54-200-184-94.us-west-2.compute.amazonaws.com'
+
+alias microssh='ssh -i ~/.ssh/awskey.pem ec2-user@ec2-54-201-89-156.us-west-2.compute.amazonaws.com'
+
+alias cussh='ssh iaz2105@clic.cs.columbia.edu'
+
+alias beet='sudo beet'
+
+# add sublime to path
+#ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 

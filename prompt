@@ -1,0 +1,30 @@
+# configure the bash prompt
+
+RED_ESC='\[\e[31;40m\]'
+GREEN_ESC='\[\e[32;40m\]'
+YELLOW_ESC='\[\e[33;40m\]'
+BLUE_ESC='\[\e[34;40m\]'
+PURPLE_ESC='\[\e[35;40m\]'
+CYAN_ESC='\[\e[36;40m\]'
+RESET='\[\e[0m\]'
+
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+function git_check_branch {
+  if [[ -n $(git branch 2> /dev/null) ]]
+  then
+    echo $(parse_git_branch)
+  else
+    echo -e '\xe2\x9c\x96'
+  fi
+}
+
+#export PS1="${BLUE_ESC}┌─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(parse_git_branch)${BLUE_ESC} ]─[ ${YELLOW_ESC}\t${BLUE_ESC} ]\n└─> $RESET"
+
+export PS1="${BLUE_ESC}┌─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]─[ ${YELLOW_ESC}\t${BLUE_ESC} ]\n└─> $RESET"
+
