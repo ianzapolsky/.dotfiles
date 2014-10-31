@@ -1,21 +1,15 @@
 #!/usr/bin/env bash
 #
-# bootstrap installs things.
+# set up the current computer to use ian's .dotfiles
 
 dir=~/.dotfiles
-files="bash_profile bashrc profile viminfo vimrc"
+files="vimrc bashrc gitconfig bash_profile"
 
-echo "changing to the $dir directory"
 cd $dir
-echo "...done"
 
 for file in $files; do
-    echo "removing old version of $file..."    
-    rm ~/.$file
-    echo "creating symlink to $file in home directory..."
-    ln -s $dir/$file ~/.$file
+    echo "copying $file to ~ ..."    
+    cp ./$file ~/.$file
 done
 
-export PATH=$PATH:$dir/bin
-  
-
+echo "done"

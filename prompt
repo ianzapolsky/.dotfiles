@@ -1,4 +1,4 @@
-# configure the bash prompt
+# configure bash prompt
 
 RED_ESC='\[\e[31;40m\]'
 GREEN_ESC='\[\e[32;40m\]'
@@ -24,7 +24,5 @@ function git_check_branch {
   fi
 }
 
-#export PS1="${BLUE_ESC}┌─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(parse_git_branch)${BLUE_ESC} ]─[ ${YELLOW_ESC}\t${BLUE_ESC} ]\n└─> $RESET"
-
-export PS1="${BLUE_ESC}┌─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]─[ ${YELLOW_ESC}\t${BLUE_ESC} ]\n└─> $RESET"
+export PS1="${BLUE_ESC}|-[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]─> $RESET"
 

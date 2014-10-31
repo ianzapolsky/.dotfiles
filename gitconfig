@@ -1,0 +1,22 @@
+[user]
+	name = ianzapolsky
+	email = ianzapolsky@gmail.com
+
+[alias]
+  au  = add -u
+  b   = branch
+  st  = status
+  cm  = commit -m
+  co  = checkout
+  l   = log --graph --pretty=format:'%C(bold blue)%h%Creset -%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit
+  nb  = checkout -b 
+  po  = push origin
+  pro = pull --rebase origin
+
+[color]
+  ui = true
+
+  [color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
