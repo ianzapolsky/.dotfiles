@@ -17,6 +17,9 @@ cd ~
 echo "    installing pathogen ..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+echo "    installing nerdtree ..."
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdtree.git
 echo "    installing colors ..."
 mkdir -p ~/.vim/colors && \
 curl -o ~/.vim/colors/jellybeans.vim http://www.vim.org/scripts/download_script.php?src_id=17225
