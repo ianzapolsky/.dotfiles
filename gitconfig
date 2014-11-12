@@ -8,7 +8,7 @@
   st  = status
   cm  = commit -m
   co  = checkout
-  l   = log --graph --pretty=format:'%C(bold blue)%h%Creset -%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit
+  l   = !git --no-pager log --graph --pretty=tformat:'%C(bold blue)%h%Creset -%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit
   nb  = checkout -b 
   po  = push origin
   pro = pull --rebase origin
