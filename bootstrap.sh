@@ -24,4 +24,6 @@ echo "    installing colors ..."
 mkdir -p ~/.vim/colors && \
 curl -o ~/.vim/colors/jellybeans.vim http://www.vim.org/scripts/download_script.php?src_id=17225
 
+source ~/.bashrc
+
 echo "done"
