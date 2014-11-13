@@ -32,6 +32,7 @@ map <C-k> <C-w>k<C-w>
 map = <C-W>><C-W>>
 map - <C-W><<C-W><
 let g:NERDTreeHighlightCursorline = 1
+let g:NERDTreeDirArrows = 0
 let g:NERDTreeWinSize = 30
 let g:NERDTreeIgnore = ['tmp', '.pyc', '.swp']
 
