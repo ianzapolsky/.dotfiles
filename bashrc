@@ -7,3 +7,7 @@ alias v="vim"
 # set prompt
 source ~/.dotfiles/prompt
 
+# set ls colors
+export CLICOLOR=1
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+
