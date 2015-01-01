@@ -3,6 +3,8 @@
 # set alias
 alias g="git"
 alias v="vim"
+alias ll="ls -l"
+alias la="ls -a"
 
 # set prompt
 source ~/.dotfiles/prompt
