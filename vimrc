@@ -14,6 +14,9 @@ set ruler
 set tabstop=2
 set expandtab
 
+" markdown highlighting on .md files
+au BufRead,BufNewFile *.md set filetype=markdown
+
 " theme
 syntax enable
 set background=dark
@@ -25,17 +28,16 @@ colorscheme jellybeans
 
 " NERDTree commands
 :command NT NERDTree .
-map <C-h> <C-w>h<C-w>
-map <C-l> <C-w>l<C-w>
-map <C-j> <C-w>j<C-w>
-map <C-k> <C-w>k<C-w>
-map = <C-W>><C-W>>
-map - <C-W><<C-W><
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map = <C-w>>
+map - <C-w><
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeDirArrows = 0
 let g:NERDTreeWinSize = 30
 let g:NERDTreeIgnore = ['tmp', '.pyc', '.swp']
-
 
 " auto-open NERDTree if vim is run without commands
 autocmd vimenter * if !argc() | NERDTree | endif
