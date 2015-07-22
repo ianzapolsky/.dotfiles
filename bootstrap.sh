@@ -22,6 +22,6 @@ cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
 echo "    installing colors ..."
 mkdir -p ~/.vim/colors && \
-curl -o ~/.vim/colors/jellybeans.vim http://www.vim.org/scripts/download_script.php?src_id=17225
+curl -o ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 
 echo "done"
