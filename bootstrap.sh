@@ -11,17 +11,18 @@ for file in $files; do
     echo "    copying $file to ~/.$file"    
     cp ./$file ~/.$file
 done
+echo "done"
 
-echo "setting up ian's vim ..."
+echo "\nsetting up ian's vim ..."
 cd ~
-echo "    installing pathogen ..."
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-echo "    installing nerdtree ..."
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree.git
+echo "    making backup folder at ~/.vimbackup ..."
+mkdir ~/.vimbackup
+echo "    installing vundle ..."
+mkdir -p ~/.vim/bundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "    installing colors ..."
 mkdir -p ~/.vim/colors && \
 curl -o ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-
+echo "    installing plugins ..."
+vim +PluginInstall +qall
 echo "done"

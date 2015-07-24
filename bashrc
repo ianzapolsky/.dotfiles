@@ -5,7 +5,6 @@ alias g="git"
 alias v="vim"
 alias ll="ls -l"
 alias la="ls -a"
-alias awssh="ssh -i ~/.ssh/aws_iaz.pem"
 
 # set prompt
 source ~/.dotfiles/prompt
