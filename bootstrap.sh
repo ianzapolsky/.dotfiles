@@ -3,7 +3,7 @@
 # set up the current computer to use ian's .dotfiles
 
 dir=~/.dotfiles
-files="vimrc bashrc gitconfig bash_profile"
+files="vimrc bashrc gitconfig bash_profile tmux.conf"
 
 echo "copying ian's dotfiles to ~ ..."
 cd $dir

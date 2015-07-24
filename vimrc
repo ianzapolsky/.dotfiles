@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
@@ -19,6 +20,9 @@ if version >= 703
 else
   match ErrorMsg '\%>80v.\+'
 endif
+
+" whitespace
+match ErrorMsg '\s\+$'
 
 " general settings
 set cursorline
@@ -56,3 +60,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map = <C-w>>
 map - <C-w><
+
+" tmux pane navigation
+noremap <silent> <C-h> :TmuxNavigateLeft<cr>
+noremap <silent> <C-l> :TmuxNavigateRight<cr>
+noremap <silent> <C-j> :TmuxNavigateDown<cr>
+noremap <silent> <C-k> :TmuxNavigateUp<cr>
