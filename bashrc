@@ -10,6 +10,10 @@ alias la="ls -a"
 source ~/.dotfiles/prompt
 
 # set ls colors
-export CLICOLOR=1
-export LSCOLORS='Exfxcxdxbxegedabagacad'
-
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  alias ls='ls --color=auto'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  export CLICOLOR=1
+  export LSCOLORS='Exfxcxdxbxegedabagacad'
+fi
