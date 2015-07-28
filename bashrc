@@ -5,6 +5,8 @@ alias g="git"
 alias v="vim"
 alias ll="ls -l"
 alias la="ls -a"
+alias tma="tmux a -t"
+alias tmn="tmux new -s"
 
 # set prompt
 source ~/.dotfiles/prompt
