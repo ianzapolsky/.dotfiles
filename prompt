@@ -25,6 +25,10 @@ function git_check_branch {
   fi
 }
 
-export PS1="${BLUE_ESC}|-[ ${YELLOW_ESC}\H${BLUE_ESC} ]─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\W${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]─> $RESET"
+function prompt_command {
+  [ -S $SSH_AUTH_SOCK ] || export SSH_AUTH_SOCK=$(find /tmp/ssh*/agent.* -user $LOGNAME | xargs ls -1rt | tail -1)
+  export PS1="${BLUE_ESC}|-[ ${YELLOW_ESC}\H${BLUE_ESC} ]─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\W${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]─> $RESET"
+}
 
+export PROMPT_COMMAND=prompt_command
 
