@@ -7,6 +7,7 @@ alias ll="ls -l"
 alias la="ls -a"
 alias tma="tmux a -t"
 alias tmn="tmux new -s"
+alias tml="tmux ls"
 
 # set prompt
 source ~/.dotfiles/prompt
