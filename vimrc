@@ -66,3 +66,9 @@ noremap <silent> <C-h> :TmuxNavigateLeft<cr>
 noremap <silent> <C-l> :TmuxNavigateRight<cr>
 noremap <silent> <C-j> :TmuxNavigateDown<cr>
 noremap <silent> <C-k> :TmuxNavigateUp<cr>
+
+" treat .md files as markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md  set ft=markdown
+
+" do not insert comment lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
