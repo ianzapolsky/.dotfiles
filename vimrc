@@ -33,6 +33,7 @@ set number
 set ruler
 set tabstop=2
 set expandtab
+filetype indent off
 
 " syntax
 syntax enable
