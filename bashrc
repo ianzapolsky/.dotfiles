@@ -5,9 +5,13 @@ alias g="git"
 alias v="vim"
 alias ll="ls -l"
 alias la="ls -a"
+
+# tmux aliases
 alias tma="tmux a -t"
 alias tmn="tmux new -s"
 alias tml="tmux ls"
+alias tmk="tmux kill-session -t"
+alias tmp="tmux show-buffer | nc localhost 2224"
 
 # set prompt
 source ~/.dotfiles/prompt
