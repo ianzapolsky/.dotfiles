@@ -4,10 +4,14 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'fatih/vim-go'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
@@ -39,7 +43,8 @@ filetype indent off
 syntax enable
 set background=dark
 set t_Co=256
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme solarized
 
 " jj instead of escape
 :imap jj <Esc>
