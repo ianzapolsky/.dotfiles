@@ -2,19 +2,29 @@
 
 # set alias
 alias g="git"
+alias gfp="git fetch && git pull"
 alias v="vim"
 alias ll="ls -l"
 alias la="ls -a"
-
-# tmux aliases
 alias tma="tmux a -t"
 alias tmn="tmux new -s"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -t"
-alias tmp="tmux show-buffer | nc localhost 2224"
+
+alias ack="ack --ignore-dir pkg"
+alias json_xs="python -m json.tool"
+
+# use vimdiff for git diff
+alias gitdiff='git difftool --tool=vimdiff'
 
 # set prompt
 source ~/.dotfiles/prompt
+
+# turn on git autocomplete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+  __git_complete g __git_main
+fi
 
 # set ls colors
 unamestr=`uname`
@@ -24,6 +34,9 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   export CLICOLOR=1
   export LSCOLORS='Exfxcxdxbxegedabagacad'
 fi
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # add ~/.dotfiles/bin to path
 export PATH=$PATH:~/.dotfiles/bin
