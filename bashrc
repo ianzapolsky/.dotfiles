@@ -21,8 +21,8 @@ alias gitdiff='git difftool --tool=vimdiff'
 source ~/.dotfiles/prompt
 
 # turn on git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f ~/.dotfiles/git-completion.bash ]; then
+  . ~/.dotfiles/git-completion.bash
   __git_complete g __git_main
 fi
 
