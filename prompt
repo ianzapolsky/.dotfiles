@@ -25,9 +25,18 @@ function git_check_branch {
   fi
 }
 
+# Determine active Python virtualenv details.
+function get_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      echo ""
+  else
+      echo "${BLUE_ESC}-[${RED_ESC}`basename \"$VIRTUAL_ENV\"`${BLUE_ESC}]${RESET} "
+  fi
+}
+
 function prompt_command {
   [ -S $SSH_AUTH_SOCK ] || export SSH_AUTH_SOCK=$(find /tmp/ssh*/agent.* -user $LOGNAME | xargs ls -1rt | tail -1)
-  export PS1="${BLUE_ESC}|-[ ${YELLOW_ESC}\H${BLUE_ESC} ]─[ ${PURPLE_ESC}\u${BLUE_ESC} ]─[ ${GREEN_ESC}\w${BLUE_ESC} ]─[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]\n|-> $RESET"
+  export PS1="${BLUE_ESC}|-[ ${YELLOW_ESC}\H${BLUE_ESC} ]-[ ${PURPLE_ESC}\u${BLUE_ESC} ]-[ ${GREEN_ESC}\w${BLUE_ESC} ]-[ ${CYAN_ESC}\$(git_check_branch)${BLUE_ESC} ]$(get_virtualenv)\n${BLUE_ESC}|-> $RESET"
 }
 
 export PROMPT_COMMAND=prompt_command
